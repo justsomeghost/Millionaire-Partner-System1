@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millionaire Partner System | Exclusive Free Masterclass</title>
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        executive: {
+                            bg: '#070a12',
+                            navy: '#0f172a',
+                            card: '#111827',
+                            cardDark: '#0b0f19',
+                            border: '#1f2937',
+                            gold: '#d4af37',
+                            goldLight: '#f3e5ab',
+                            goldDark: '#997a15',
+                            emerald: '#10b981'
+                        }
+                    },
+                    animation: {
+                        'gold-shimmer': 'goldShimmer 3s infinite linear',
+                        'pulse-subtle': 'pulseSubtle 2s infinite ease-in-out',
+                        'float': 'float 5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        goldShimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        },
+                        pulseSubtle: {
+                            '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                            '50%': { opacity: '0.92', transform: 'scale(1.02)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Luxury Champagne Gold Metallic Gradient & Glassmorphism */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 45%, #aa7c11 80%, #fef3c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.15);
+        }
+
+        .gold-button {
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #997a15 100%);
+            box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.35);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gold-button:hover {
+            background: linear-gradient(135deg, #e5be48 0%, #ca9618 50%, #b8860b 100%);
+            box-shadow: 0 15px 40px 0px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .glass-executive {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .glass-executive-hover {
+            transition: all 0.3s ease;
+        }
+        .glass-executive-hover:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .gold-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-executive-bg text-slate-200 font-sans selection:bg-executive-gold selection:text-black min-h-screen relative overflow-x-hidden">
+
+    <!-- ========================================================================= -->
+    <!-- YOUR HARDCODED AFFILIATE LINK JS CONFIGURATION -->
+    <!-- ========================================================================= -->
+    <script>
+        /*****************************************************************************
+         * YOUR EXACT AFFILIATE LINK IS HARDCODED HERE:
+         *****************************************************************************/
+        const AFFILIATE_LINK = "https://millionairepartnership.com/webclass-d24#aff=whispermountain3793e"; 
+
+        /*****************************************************************************
+         * Automatically links all CTA buttons on the page to your affiliate link
+         *****************************************************************************/
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctaButtons = document.querySelectorAll('.affiliate-btn');
+            ctaButtons.forEach(button => {
+                button.setAttribute('href', AFFILIATE_LINK);
+                button.setAttribute('target', '_blank');
+                button.setAttribute('rel', 'noopener noreferrer');
+            });
+
+            // Countdown Timer Script
+            let duration = 14 * 60 + 42; // 14 mins 42 secs initial
+            const timerEl = document.getElementById('countdown-timer');
+            const timerStickyEl = document.getElementById('countdown-timer-sticky');
+
+            function updateTimer() {
+                const minutes = Math.floor(duration / 60);
+                const seconds = duration % 60;
+                const formatted = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                if (timerEl) timerEl.textContent = formatted;
+                if (timerStickyEl) timerStickyEl.textContent = formatted;
+                if (duration > 0) duration--;
+            }
+
+            setInterval(updateTimer, 1000);
+            updateTimer();
+        });
+    </script>
+
+    <!-- Glowing Background Ambient Spheres -->
+    <div class="gold-orb w-[600px] h-[600px] bg-executive-gold/10 top-[-150px] left-[-200px]"></div>
+    <div class="gold-orb w-[500px] h-[500px] bg-blue-900/20 top-[30%] right-[-150px]"></div>
+    <div class="gold-orb w-[550px] h-[550px] bg-executive-gold/10 bottom-[10%] left-[10%]"></div>
+
+    <!-- URGENT VIP ANNOUNCEMENT BAR -->
+    <div class="relative z-30 bg-gradient-to-r from-amber-950/80 via-executive-card to-amber-950/80 border-b border-executive-gold/30 py-2.5 px-4 text-center text-xs sm:text-sm font-medium text-amber-200">
+        <div class="max-w-6xl mx-auto flex items-center justify-center gap-3">
+            <span class="flex h-2 w-2 rounded-full bg-executive-gold animate-ping"></span>
+            <span>
+                <strong class="text-white font-bold uppercase tracking-widest">Exclusive Free Masterclass:</strong> 
+                Limited Broadcast Seats Available For Today's Session
+            </span>
+            <span class="hidden md:inline-block text-executive-gold font-mono font-bold bg-executive-gold/10 px-2.5 py-0.5 rounded border border-executive-gold/20">
+                Timer: <span id="countdown-timer">14:42</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="relative z-20 border-b border-white/5 py-5 px-4 sm:px-8 bg-executive-bg/90 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-executive-gold via-amber-200 to-amber-600 flex items-center justify-center font-bold text-black text-xl shadow-lg shadow-executive-gold/20">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-lg sm:text-xl tracking-tight text-white block">MILLIONAIRE PARTNER</span>
+                    <span class="text-[10px] tracking-[0.25em] text-executive-gold uppercase block -mt-1 font-semibold">System Masterclass</span>
+                </div>
+            </div>
+            
+            <a href="#" class="affiliate-btn hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-executive-gold/40 text-xs font-bold text-executive-goldLight hover:bg-executive-gold/10 transition-colors">
+                <i class="fa-solid fa-ticket text-executive-gold"></i>
+                <span>Reserve Free Seat</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative z-10 pt-12 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center max-w-4xl mx-auto space-y-6">
+            
+            <!-- VIP Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-executive gold-border-glow text-xs sm:text-sm font-semibold text-executive-goldLight">
+                <i class="fa-solid fa-star text-executive-gold"></i>
+                #1 Top-Rated Make Money Online Masterclass
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] font-serif">
+                How To Build A <span class="gold-gradient-text">7-Figure Digital Empire</span> Using The Millionaire Partner System
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">
+                Discover the exact step-by-step automated system engineered to generate up to <strong class="text-white font-semibold">$2,000+ per sale</strong> — without creating your own products, dealing with customer support, or requiring tech experience.
+            </p>
+
+            <!-- Video/Event Masterclass Preview Card -->
+            <div class="pt-6 pb-2 max-w-3xl mx-auto">
+                <div class="glass-executive p-6 sm:p-8 rounded-3xl gold-border-glow relative overflow-hidden shadow-2xl">
+                    
+                    <!-- Live Tag -->
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <span class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                            </span>
+                            <span class="text-xs font-bold text-white uppercase tracking-wider">Free Private Workshop</span>
+                        </div>
+                        <div class="text-xs text-slate-400 flex items-center gap-1.5">
+                            <i class="fa-solid fa-users text-executive-gold"></i> 
+                            <span class="text-slate-200 font-semibold">847 People</span> Watching Now
+                        </div>
+                    </div>
+
+                    <!-- Masterclass Banner Card Mockup -->
+                    <div class="relative rounded-2xl bg-gradient-to-br from-executive-cardDark to-slate-900 border border-white/10 p-8 sm:p-10 text-center space-y-6 group">
+                        
+                        <!-- Play Icon Wrapper -->
+                        <a href="#" class="affiliate-btn inline-flex w-20 h-20 rounded-full bg-gradient-to-tr from-executive-gold to-amber-200 items-center justify-center text-black text-2xl shadow-xl shadow-executive-gold/30 hover:scale-110 transition-transform duration-300 mx-auto">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </a>
+
+                        <div class="space-y-2">
+                            <h3 class="text-xl sm:text-2xl font-bold text-white font-serif">"The 3-Step Automated Profit Blueprint"</h3>
+                            <p class="text-xs sm:text-sm text-slate-400">Hosted by 8-Figure Digital Vendor & Wealth Coach</p>
+                        </div>
+
+                        <!-- Highlights Pill Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left pt-2">
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center gap-2.5">
+                                <i class="fa-solid fa-dollar-sign text-executive-gold text-sm"></i>
+                                <span class="text-xs text-slate-300 font-medium">$2,000 Payout Potential</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center gap-2.5">
+                                <i class="fa-solid fa-gears text-executive-gold text-sm"></i>
+                                <span class="text-xs text-slate-300 font-medium">100% Automated Backend</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-executive-gold text-sm"></i>
+                                <span class="text-xs text-slate-300 font-medium">No Product Creation Needed</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- CALL TO ACTION BUTTON -->
+                    <div class="mt-8 space-y-3">
+                        <a href="#" class="affiliate-btn gold-button group relative w-full inline-flex items-center justify-center gap-3 px-8 py-5 text-lg font-extrabold text-black uppercase tracking-wider rounded-xl transition-all duration-300 shadow-2xl animate-pulse-subtle">
+                            <span>Reserve Your Free Seat Now</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
+                        </a>
+
+                        <div class="flex items-center justify-center gap-4 text-xs text-slate-400 pt-1">
+                            <span><i class="fa-solid fa-lock text-executive-gold mr-1"></i> 100% Free Registration</span>
+                            <span><i class="fa-solid fa-shield-halved text-executive-gold mr-1"></i> Instant Webclass Access</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROOF METRICS BANNER -->
+    <section class="relative z-10 border-y border-white/10 bg-executive-cardDark/80 py-10 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="space-y-1">
+                <div class="text-3xl sm:text-4xl font-extrabold text-white font-serif">$15M+</div>
+                <div class="text-xs sm:text-sm text-executive-gold font-medium uppercase tracking-wider">Vendor Sales Record</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-3xl sm:text-4xl font-extrabold text-white font-serif">Up to $2K</div>
+                <div class="text-xs sm:text-sm text-executive-gold font-medium uppercase tracking-wider">Commissions / Sale</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-3xl sm:text-4xl font-extrabold text-white font-serif">#1 Rated</div>
+                <div class="text-xs sm:text-sm text-executive-gold font-medium uppercase tracking-wider">BizOpp Webclass</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-3xl sm:text-4xl font-extrabold text-white font-serif">100%</div>
+                <div class="text-xs sm:text-sm text-executive-gold font-medium uppercase tracking-wider">Beginner Friendly</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY THIS SYSTEM WORKS (4-GRID FEATURES) -->
+    <section class="relative z-10 py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <div class="text-xs font-bold text-executive-gold uppercase tracking-widest">Turnkey Online Business Model</div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-serif">Why The <span class="gold-gradient-text">Partner System</span> Outperforms</h2>
+            <p class="text-slate-400 text-base sm:text-lg">Unlike traditional online business models that take months to set up, this masterclass reveals how to partner directly with proven 8-figure infrastructure.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Feature 1 -->
+            <div class="glass-executive glass-executive-hover p-8 rounded-3xl space-y-4">
+                <div class="w-14 h-14 rounded-2xl bg-executive-gold/10 border border-executive-gold/30 flex items-center justify-center text-executive-gold text-2xl">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white font-serif">Plug-And-Play Partnership</h3>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Instead of spending thousands building products and funnels from scratch, you partner directly with an established 8-figure vendor and leverage their already-converting assets.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="glass-executive glass-executive-hover p-8 rounded-3xl space-y-4">
+                <div class="w-14 h-14 rounded-2xl bg-executive-gold/10 border border-executive-gold/30 flex items-center justify-center text-executive-gold text-2xl">
+                    <i class="fa-solid fa-chart-line-up"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white font-serif">High-Ticket Commission Structure</h3>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Stop working for tiny $10 commissions. Learn how the backend ecosystem upsells high-value packages, allowing partners to earn up to $2,000 on a single customer conversion.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="glass-executive glass-executive-hover p-8 rounded-3xl space-y-4">
+                <div class="w-14 h-14 rounded-2xl bg-executive-gold/10 border border-executive-gold/30 flex items-center justify-center text-executive-gold text-2xl">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white font-serif">Fulfillment & Support Handled</h3>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Never worry about customer refund requests, product updates, or technical support. The vendor’s dedicated internal team handles 100% of the backend operations for you.
+                </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="glass-executive glass-executive-hover p-8 rounded-3xl space-y-4">
+                <div class="w-14 h-14 rounded-2xl bg-executive-gold/10 border border-executive-gold/30 flex items-center justify-center text-executive-gold text-2xl">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white font-serif">Rapid Implementation Framework</h3>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Designed specifically for busy professionals, entrepreneurs, and beginners. You will see how to configure the core system step-by-step during the masterclass.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHAT YOU WILL LEARN LIST SECTION -->
+    <section class="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="glass-executive p-8 sm:p-12 rounded-3xl gold-border-glow space-y-8 bg-gradient-to-b from-executive-card to-executive-cardDark">
+            
+            <div class="text-center space-y-3">
+                <span class="text-xs font-bold text-executive-gold uppercase tracking-widest">Workshop Agenda</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-serif">Inside This Free Masterclass Training:</h2>
+            </div>
+
+            <div class="space-y-4 max-w-3xl mx-auto">
+                
+                <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-full bg-executive-gold/20 text-executive-gold flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">1</div>
+                    <div class="space-y-1">
+                        <h4 class="text-base sm:text-lg font-bold text-white">The "Partner Shortcut" Method</h4>
+                        <p class="text-xs sm:text-sm text-slate-300">How to skip product creation, website building, and merchant accounts by tapping into existing $15M+ sales funnels.</p>
+                    </div>
+                </div>
+
+                <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-full bg-executive-gold/20 text-executive-gold flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">2</div>
+                    <div class="space-y-1">
+                        <h4 class="text-base sm:text-lg font-bold text-white">Unlocking High-Ticket Upsells</h4>
+                        <p class="text-xs sm:text-sm text-slate-300">The psychological backend strategy that turns standard front-end leads into multi-thousand-dollar affiliate payouts.</p>
+                    </div>
+                </div>
+
+                <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-full bg-executive-gold/20 text-executive-gold flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">3</div>
+                    <div class="space-y-1">
+                        <h4 class="text-base sm:text-lg font-bold text-white">Automated Traffic Scaling</h4>
+                        <p class="text-xs sm:text-sm text-slate-300">Where to find motivated buyers across BizOpp, Personal Development, and Digital Marketing niches quickly and cost-effectively.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA INSIDE BOX -->
+            <div class="pt-4 text-center">
+                <a href="#" class="affiliate-btn gold-button group relative inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-black uppercase tracking-wider rounded-xl transition-all shadow-xl">
+                    <span>Attend Free Webclass Today</span>
+                    <i class="fa-solid fa-circle-play group-hover:scale-110 transition-transform"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FINAL CALL TO ACTION BOX -->
+    <section class="relative z-10 py-20 px-4 text-center">
+        <div class="max-w-4xl mx-auto glass-executive p-10 sm:p-16 rounded-3xl gold-border-glow space-y-8">
+            <div class="inline-block bg-executive-gold/10 px-4 py-1.5 rounded-full border border-executive-gold/30 text-xs font-bold text-executive-gold uppercase tracking-widest">
+                Registration Closing Soon
+            </div>
+
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-serif leading-tight">Ready To Build Your Automated Online Empire?</h2>
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">Click the button below to secure your instant access pass to the official Millionaire Partner System broadcast.</p>
+            
+            <div class="max-w-md mx-auto">
+                <a href="#" class="affiliate-btn gold-button group relative w-full inline-flex items-center justify-center gap-3 px-8 py-5 text-lg font-extrabold text-black uppercase tracking-wider rounded-xl transition-all shadow-2xl animate-pulse-subtle">
+                    <span>Claim Your Free Spot Now</span>
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
+                </a>
+            </div>
+
+            <p class="text-xs text-slate-400">
+                <i class="fa-solid fa-shield-check text-executive-gold mr-1"></i> No Credit Card Required • Instant Free Access
+            </p>
+        </div>
+    </section>
+
+    <!-- STICKY BOTTOM ACTION BAR (MOBILE & DESKTOP) -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-executive-cardDark/95 border-t border-executive-gold/30 py-3 px-4 backdrop-blur-lg">
+        <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+            <div class="hidden sm:flex items-center gap-3 text-xs text-slate-300">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span><strong>Free Masterclass Access:</strong> Seats fill on a first-come basis</span>
+                <span class="text-executive-gold font-mono font-bold ml-2">Time Remaining: <span id="countdown-timer-sticky">14:42</span></span>
+            </div>
+
+            <a href="#" class="affiliate-btn gold-button w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-xs sm:text-sm font-extrabold text-black uppercase tracking-wider rounded-lg transition-all shadow-lg text-center">
+                <span>Access Masterclass Now</span>
+                <i class="fa-solid fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- LEGAL DISCLAIMER & AFFILIATE DISCLOSURE FOOTER -->
+    <footer class="relative z-10 border-t border-white/10 bg-black/90 py-16 px-4 sm:px-6 lg:px-8 text-xs text-slate-500 leading-relaxed mb-12">
+        <div class="max-w-6xl mx-auto space-y-6">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-2xl bg-executive-card border border-white/5">
+                <!-- Affiliate Disclaimer -->
+                <div class="space-y-2">
+                    <h4 class="font-bold text-slate-300 uppercase tracking-wider text-[11px]">
+                        <i class="fa-solid fa-circle-info text-executive-gold mr-1"></i> Independent Affiliate Disclosure
+                    </h4>
+                    <p>
+                        This site is an independent promotional landing page. If you register or purchase through the links on this website, I may receive an affiliate commission from the vendor. This comes at zero extra cost to you. I only recommend programs that provide genuine value and training.
+                    </p>
+                </div>
+
+                <!-- Seller Responsibility & Product Liability Disclaimer -->
+                <div class="space-y-2">
+                    <h4 class="font-bold text-slate-300 uppercase tracking-wider text-[11px]">
+                        <i class="fa-solid fa-shield-cat text-amber-500 mr-1"></i> Third-Party Vendor Disclaimer
+                    </h4>
+                    <p>
+                        I am an independent marketing partner and **do not own, operate, host, or deliver** the Millionaire Partner System, its webclass, or its backend digital products. All payment processing, customer support, billing, guarantees, and product fulfillment are managed exclusively by the vendor (via Digistore24). Please address any product inquiries to the vendor directly.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Earnings & Income Disclaimer -->
+            <div class="p-6 rounded-2xl bg-executive-card border border-white/5 space-y-2">
+                <h4 class="font-bold text-slate-300 uppercase tracking-wider text-[11px]">
+                    <i class="fa-solid fa-chart-pie text-executive-gold mr-1"></i> Income & Earnings Disclaimer
+                </h4>
+                <p>
+                    Any earnings, revenue figures, or commission examples mentioned on this page or during the masterclass are extraordinary results and are not guaranteed for everyone. Success in online business requires hard work, dedication, skill, and persistent execution. Your individual results will vary depending on your background, experience, and work ethic.
+                </p>
+            </div>
+
+            <div class="text-center pt-4 text-slate-600">
+                <p>© <script>document.write(new Date().getFullYear())</script> Millionaire Partner Review & Bridge Page. All Rights Reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
